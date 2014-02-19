@@ -1,0 +1,70 @@
+<div class="page light" id="event">
+	<div class="header">
+		<div class="header-nav">
+			<div class="header-section-filter left"><a tap-directive="$navigate.go('/', true)"><img src="../images/arrowLeftLight@2x.png" border="0"/></a></div>
+			<div class="header-section-filter right"><a data-ng-click="modalOptions()"><img src="../images/dotIcon@2x.png" border="0"/></a></div>
+			<div class="header-section-filter center">Feed Detail</div>
+		</div>
+	</div>
+	<div class="subheader">
+		<div class="subheader-box">{{event.title}}</div>
+	</div>
+	<div class="content">
+		<div class="event-row">
+			<div class="event-date">{{event.dateAdded | date:'medium'}}</div>
+		</div>
+		<div class="event-row">
+			<div class="event-hero"><img src="http://cdn.social-inertia.com/channels/{{event.channelID}}/images/{{event.imageRetina}}" border="0"/></div>
+		</div>
+		<div class="event-row">
+			<div class="event-description"><span ng-bind-html-unsafe="event.description"></span></div>
+			<div class="event-suggestion"><span ng-bind-html-unsafe="event.suggestion"></span></div>
+		</div>
+	</div>
+	<div class="footer-menu">
+		<div class="footer-menu-box">
+			<div class="footer-menu-button left" data-ng-click="modalSubmenu()">Share</div>
+			<div class="footer-menu-button center">{{event.actionType}}</div>
+			<div class="footer-menu-button right"><a data-ng-click="deleteFeed(event.idalphaFeedItem)">No Thanks</a></div>
+		</div>
+	</div>
+
+
+	<!-- Modal Options -->
+	<div class="modal-options">
+		<div class="title">More Options</div>
+		<ul class="menu">
+			<li><a>Report</a></li>
+			<li><a data-ng-click="save(event.idalphaFeedItem)">Save</a></li>
+			<li></li>
+			<li></li>
+			<li></li>
+		</ul>
+	</div><!-- end Modal Options -->
+
+
+	<!-- Modal Submenu -->
+	<div class="modal-submenu">
+		<ul class="menu">
+			<li class="title">Share Feed</li>
+			<li><a>Facebook</a></li>
+			<li><a data-ng-click="modalEmail()">Enter Email</a></li>
+			<li class="cancel"><a data-ng-click="modalSubmenu()">Cancel</a></li>
+		</ul>
+	</div><!-- end Modal Submenu -->
+
+
+	<!-- Modal Email -->
+	<div class="modal-email">
+		<div class="title">Enter Email</div>
+		<div class="email-content">
+			Enter a comma seperated value of emails<br/>
+			<br/>
+			<input type="text" class="" data-ng-model="inputData.emails" /><br/>
+			<span><input type="button" class="inputBtn" data-ng-click="modalEmail()" value="Cancel"/></span>
+			<span><input type="button" class="inputBtn" data-ng-click="shareEmail(event.idalphaFeedItem)" value="OK"/></span>
+		</div>
+	</div><!-- end Modal Email -->
+
+
+</div>

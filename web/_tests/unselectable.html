@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="author" content=""/>
+<meta charset="UTF-8"/>
+
+<script type="text/javascript" src="../js/jquery-1.10.2.min.js"></script>
+
+<style>
+.unselectable {
+	-webkit-user-select: none; /* Safari, Chrome */
+	-khtml-user-select: none; /* Konqueror */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE */
+	user-select: none; /* CSS3 */
+}
+</style>
+
+<script>
+	$(document).ready(function(){
+		$('img').on('dragstart', function(){
+			return false;
+		});
+	});
+</script>
+
+</head>
+<body>
+
+<div><img class="unselectable" src="/images/Slide1-568h@2x.png" border="0"/></div>
+
+</body>
+</html>

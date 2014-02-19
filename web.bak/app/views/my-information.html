@@ -1,0 +1,43 @@
+<div class="page dark" id="my-information">
+	<div class="header profile">
+		<div class="header-nav">
+			<!--<div class="header-section-profile left"><img src="../images/neutralProfileIcon@2x.png" border="0"/></div>-->
+			<div class="header-section-profile right"><a tap-directive="$navigate.go('/profile')"><img src="../images/arrowRightLight@2x.png" border="0"/></a></div>
+			<div class="header-section-profile center">My Information</div>
+		</div>
+	</div>
+	<div class="content left">
+		<div class="content-box">
+			<div class="row">
+				<div class="label1">First Name</div>
+				<div><input type="text" class="field" data-ng-model="model.firstName" placeholder="" value="{{model.firstName}}" /></div>
+			</div>
+			<div class="row">
+				<div class="label1">Last Name</div>
+				<div><input type="text" class="field" data-ng-model="model.lastName" placeholder="" /></div>
+			</div>
+			<div class="row">
+				<div class="label1">Gender</div>
+				<div>
+					<select data-ng-model="model.gender">
+						<option value="N"></option>
+						<option value="M">Male</option>
+						<option value="F">Female</option>
+						<option value="U">Decline to state</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="label1">Age</div>
+				<div><input type="text" class="field" data-ng-model="model.age" placeholder="" /></div>
+			</div>
+			<div class="row">
+				<div class="label1">Home ZIP Code</div>
+				<div><input type="text" class="field" data-ng-model="model.zip" placeholder="" /><input type="hidden" data-ng-model="model.email" /></div>
+			</div>
+			<div class="row tcenter">
+				<input type="button" class="inputBtn" data-ng-click="update()" value="Submit"/>
+			</div>
+		</div>
+	</div>
+</div>

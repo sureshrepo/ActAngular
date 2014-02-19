@@ -1,0 +1,35 @@
+<div class="page dark" id="profile">
+	<div class="header">
+		<div class="header-nav">
+			<div class="header-section left"><img src="../images/neutralProfileIcon@2x.png" border="0"/></div>
+			<div class="header-section right"><a tap-directive="$navigate.go('/')"><img src="../images/arrowRightLight@2x.png" border="0"/></a></div>
+			<!--<div class="header-section center">icon</div>-->
+		</div>
+	</div>
+	<div class="content left">
+		<div class="profile-menu" scrollable>
+			<ul class="pmenu-main">
+				<li>My Profile</li>
+				<ul class="pmenu-sub">
+					<li class="myinfo"><a tap-directive="$navigate.go('/my-information', true)">My Information</a></li>
+					<li class="settings"><a tap-directive="$navigate.go('/settings', true)">Settings</a></li>
+					<li class="mybeni"><a tap-directive="$navigate.go('/my-benefits', true)">My Benefits</a></li>
+					<li class="logout last">
+						<a data-ng-click="logout()">Logout</a>
+						<!--<a tap-directive="$navigate.go('/logout', true)">Logout</a></li>-->
+				</ul>
+				<li>Activity</li>
+				<ul class="pmenu-sub">
+					<li class="saved"><a tap-directive="$navigate.go('/saved', true)">Saved</a></li>
+					<li class="history"><a tap-directive="$navigate.go('/history', true)">History</a></li>
+					<li class="trash last"><a tap-directive="$navigate.go('/trash', true)">Trash</a></li>
+				</ul>
+				<li>More Options</li>
+				<ul class="pmenu-sub">
+					<li class="tutorial"><a tap-directive="$navigate.go('/tutorial', true)">Tutorial</a></li>
+					<li class="givefeedback last"><a tap-directive="$navigate.go('/give-feedback', true)">Give Feedback</a></li>
+				</ul>
+			</ul>
+		</div>
+	</div>
+</div>

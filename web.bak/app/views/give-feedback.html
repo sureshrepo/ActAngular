@@ -1,0 +1,38 @@
+<div class="page dark" id="give-feedback">
+	<div class="header profile">
+		<div class="header-nav">
+			<!--<div class="header-section-profile left"><img src="../images/neutralProfileIcon@2x.png" border="0"/></div>-->
+			<div class="header-section-profile right"><a tap-directive="$navigate.go('/profile')"><img src="../images/arrowRightLight@2x.png" border="0"/></a></div>
+			<div class="header-section-profile center">Give Feedback</div>
+		</div>
+	</div>
+	<div class="content left">
+		<div class="content-box">
+			<div class="row">
+				<div class="label1">Give us Feedback!</div>
+			</div>
+			<div class="row">
+				<p>We'd love to hear your thoughts on our alpha app.  Please fill out the form and submit.</p>
+			</div>
+			<div class="row">
+				<div class="label1">Rate your overall interest in the product</div>
+				<div>
+					<select data-ng-model="model.interest">
+						<option value="5">High</option>
+						<option value="4">Somewhat High</option>
+						<option value="3">Medium</option>
+						<option value="2">Low</option>
+						<option value="1">Very Low</option>
+					</select>
+				</div>
+			</div>
+			<div class="row">
+				<div class="label1">Tell us how we can improve the user experience</div>
+				<div><textarea data-ng-model="model.feedback" placeholder="" /></textarea></div>
+			</div>
+			<div class="row tcenter">
+				<input type="button" class="inputBtn" data-ng-click="feedback()" value="Submit"/>
+			</div>
+		</div>
+	</div>
+</div>

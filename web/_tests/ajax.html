@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<meta name="author" content=""/>
+<meta charset="UTF-8"/>
+
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+<script>
+$( document ).ready(function() {
+	/*$.ajax({
+		type: "POST",
+		data: '{"appKey":"55f93f2b2997ac8dfb0ae7e230481a33","email":"sparkman@appbuilder360.com","password":"p@ssoff1"}',
+		dataType: "jsonp", //jsonp
+		crossDomain: true,
+		//async: false,
+		//processData: false,
+		contentType: "application/json",
+		//contentType: "application/json; charset=utf-8",
+		url: "http://api.social-inertia.com/v3/auth/login", //?callback=?
+		//jsonpCallback:'callback',
+		success: function (data) {
+			console.log('AJAX success-data:'+data);
+			//console.log('AJAX success-status:'+status);
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log('AJAX error-XMLHttpRequest:'+XMLHttpRequest);
+			console.log('AJAX error-textStatus:'+textStatus);
+			console.log('AJAX error-errorThrown:'+errorThrown);
+			//console.log('dump:'+dump(XMLHttpRequest));
+		}
+	});*/
+
+	/*$.getJSON("http://api.social-inertia.com/v3/auth/login?callback=",
+	{
+		appKey: '55f93f2b2997ac8dfb0ae7e230481a33',
+		email: 'sparkman@appbuilder360.com',
+		password: 'p@ssoff1',
+		//tagmode: "any",
+		format: "json"
+	},
+	function(data) {
+
+	});*/
+
+	$.ajax({
+		type: "POST",
+		data: 'uri=auth/login/&email=sparkman@appbuilder360.com&password=p@ssoff1',
+		//dataType: "json", //jsonp
+		//crossDomain: true,
+		//async: false,
+		//processData: false,
+		//contentType: "application/json",
+		//contentType: "application/json; charset=utf-8",
+		url: "/request/", //?callback=?
+		//jsonpCallback:'callback',
+		success: function (data, status) {
+			var data = $.parseJSON(data);
+			console.log('AJAX success-data:'+data.userID);
+			console.log('AJAX success-status:'+status);
+		},
+		error: function(XMLHttpRequest, textStatus, errorThrown) {
+			console.log('AJAX error-XMLHttpRequest:'+XMLHttpRequest);
+			console.log('AJAX error-textStatus:'+textStatus);
+			console.log('AJAX error-errorThrown:'+errorThrown);
+			//console.log('dump:'+dump(XMLHttpRequest));
+		}
+	});
+});
+
+/*function dump(arr,level) {
+	var dumped_text = "";
+	if(!level) level = 0;
+
+	//The padding given at the beginning of the line.
+	var level_padding = "";
+	for(var j=0;j<level+1;j++) level_padding += "    ";
+
+	if(typeof(arr) == 'object') { //Array/Hashes/Objects
+		for(var item in arr) {
+			var value = arr[item];
+
+			if(typeof(value) == 'object') { //If it is an array,
+				dumped_text += level_padding + "'" + item + "' ...\n";
+				dumped_text += dump(value,level+1);
+			} else {
+				dumped_text += level_padding + "'" + item + "' => \"" + value + "\"\n";
+			}
+		}
+	} else { //Stings/Chars/Numbers etc.
+		dumped_text = "===>"+arr+"<===("+typeof(arr)+")";
+	}
+	return dumped_text;
+}*/
+</script>
+
+</head>
+<body>
+
+ajax test
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<div class="page" id="home">
+	<div class="header">
+		<div class="header-nav">
+			<div class="header-section left"><a tap-directive="$navigate.go('/profile', true)"><img src="../images/profileButton@2x.png" border="0"/></a></div>
+			<div class="header-section right"><a tap-directive="$navigate.go('/filter')"><img src="../images/channelMenuBtn@2x.png" border="0"/></a></div>
+			<div class="header-section center"><img src="../images/headerLogo@2x.png" border="0"/></div>
+		</div>
+	</div>
+	<div class="content">
+
+		<!-- FOREACH BEGIN -->
+		<div data-ng-repeat="model in models">
+
+			<div ng-switch on="model.format">
+
+				<!-- Event - large -->
+				<div ng-switch-when="1" class="event-box size-lg">
+					<div class="event-box-event" hammer-tap="gotoPage(model.idalphaFeedItem)" hammer-swipeleft="trash(model.idalphaFeedItem)" hammer-swiperight="showMenu($event)">
+						<div class="event-row">
+							<div class="event-banner"><img src="http://cdn.social-inertia.com/channels/{{model.channelID}}/images/{{model.imageRetina}}" border="0"/></div>
+							<div class="event-content size-span1">
+								<div class="event-title">{{model.title}}</div>
+								<div class="event-text"><span ng-bind-html-unsafe="model.shortDescription"></span></div>
+							</div>
+						</div>
+						<div class="event-row bottom">
+							<div class="event-button">{{model.actionType}}</div>
+						</div>
+					</div>
+					<div class="event-box-nav" hammer-swipeleft="showEvent()">
+						<ul class="event-menu">
+							<li class="etrash"><a data-ng-click=""></a></li>
+							<li class="eshare"><a data-ng-click=""></a></li>
+							<li class="efav"><a data-ng-click=""></a></li>
+							<li class="erateminus"><a data-ng-click=""></a></li>
+							<li class="erateplus"><a data-ng-click=""></a></li>
+						</ul>
+					</div>
+					<div class="event-box-delete"></div>
+				</div>
+
+				<!-- Event - small -->
+				<div ng-switch-default class="event-box size-sm">
+					<div class="event-box-event" hammer-tap="gotoPage(model.idalphaFeedItem)" hammer-swipeleft="trash(model.idalphaFeedItem)" hammer-swiperight="showMenu($event)">
+						<div class="event-row">
+							<div class="event-icon"><img src="http://cdn.social-inertia.com/channels/{{model.channelID}}/images/{{model.imageRetina}}" border="0"/></div>
+							<div class="event-content size-span2">
+								<div class="event-title">{{model.title}}</div>
+								<div class="event-text"><span ng-bind-html-unsafe="model.shortDescription"></span></div>
+							</div>
+						</div>
+						<div class="event-row bottom">
+							<div class="event-button">{{model.actionType}}</div>
+						</div>
+					</div>
+					<div class="event-box-nav" hammer-swipeleft="showEvent()">
+						<ul class="event-menu">
+							<li class="etrash"><a data-ng-click="trash(model.idalphaFeedItem)"></a></li>
+							<li class="eshare"><a data-ng-click=""></a></li>
+							<li class="efav"><a data-ng-click="trash(model.idalphaFeedItem)"></a></li>
+							<li class="erateminus"><a data-ng-click=""></a></li>
+							<li class="erateplus"><a data-ng-click=""></a></li>
+						</ul>
+					</div>
+					<div class="event-box-delete"></div>
+				</div>
+
+			</div>
+
+		</div> <!-- FOREACH END -->
+
+	</div>
+
+
+	<div class="favbar">
+		<div class="viewport">
+			<div class="box" data-drag="true">
+				<ul class="menu">
+					<li class="icon" data-ng-repeat="model in favModels" data-ng-click="loadChannel(model.channelID)">
+						<img src="http://cdn.social-inertia.com/channels/{{model.channelID}}/iconR.png" border="0"/>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+</div>

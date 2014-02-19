@@ -1,0 +1,32 @@
+<div class="page dark" id="settings">
+	<div class="header profile">
+		<div class="header-nav">
+			<!--<div class="header-section-profile left"><img src="../images/neutralProfileIcon@2x.png" border="0"/></div>-->
+			<div class="header-section-profile right"><a tap-directive="$navigate.go('/profile')"><img src="../images/arrowRightLight@2x.png" border="0"/></a></div>
+			<div class="header-section-profile center">Settings</div>
+		</div>
+	</div>
+	<div class="content left">
+		<div class="content-box">
+			<div class="row">
+				<div class="label1">Local Issues</div>
+				<div><input type="text" class="field" data-ng-model="model.localIssues" placeholder="" /></div>
+			</div>
+			<div class="row">
+				<div class="label1">Politics</div>
+				<div><input type="text" class="field" data-ng-model="model.politics" placeholder="" /></div>
+			</div>
+			<div class="row">
+				<div class="label1">Social Impact</div>
+				<div><input type="text" class="field" data-ng-model="model.socialImpact" placeholder="" /></div>
+			</div>
+			<div class="row">
+				<div class="label1">Charitable Caueses</div>
+				<div><input type="text" class="field" data-ng-model="model.charitableCauses" placeholder="" /></div>
+			</div>
+			<div class="row tcenter">
+				<input type="button" class="inputBtn" data-ng-click="reg()" value="Submit"/>
+			</div>
+		</div>
+	</div>
+</div>

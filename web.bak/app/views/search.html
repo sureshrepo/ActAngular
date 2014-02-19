@@ -1,0 +1,24 @@
+<div class="page dark" id="search">
+	<div class="header">
+		<div class="header-nav">
+			<div class="header-section-filter left"><a tap-directive="$navigate.go('/filter', true)"><img src="../images/arrowLeftLight@2x.png" border="0"/></a></div>
+			<div class="header-section-filter center">Channel Search</div>
+		</div>
+	</div>
+	<div class="content left dark">
+		<div class="content-box">
+			<div class="row">
+				<div class="label1"></div>
+				<div><input type="text" class="field" data-ng-model="inputData.search" placeholder="Search Here" /></div>
+			</div>
+			<div class="row tcenter">
+				<input type="button" class="inputBtn" data-ng-click="search()" value="Search"/>
+			</div>
+			<div class="row">
+				<ul>
+					<li data-ng-repeat="channel in channels">{{channel.name}}</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,34 @@
+<div class="page" id="organizations">
+	<div class="header">
+		<div class="header-nav">
+			<div class="header-section-filter left"><a tap-directive="$navigate.go('/filter', true)"><img src="../images/arrowLeftLight@2x.png" border="0"/></a></div>
+			<div class="header-section-filter center">Organizations</div>
+		</div>
+	</div>
+	<div class="content">
+		<!--tap-directive="$navigate.go('/event/{{model.idalphaFeedItem}}')"-->
+		<div class="row">
+			<div class="channel-box" data-ng-repeat="model in recModels" data-ng-click="modalSubmenu(model.channelID)">
+				<div class="channel-icon"><img src="http://cdn.social-inertia.com/channels/{{model.channelID}}/iconR.png" border="0"/></div>
+				<div class="channel-name">{{model.name}}</div>
+			</div>
+			<div class="channel-box" data-ng-repeat="model in allModels" data-ng-click="modalSubmenu(model.channelID)">
+				<div class="channel-icon"><img src="http://cdn.social-inertia.com/channels/{{model.channelID}}/iconR.png" border="0"/></div>
+				<div class="channel-name">{{model.name}}</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Modal Submenu -->
+	<div class="modal-submenu">
+		<ul class="menu">
+			<li class="title">Subscribe To Channel</li>
+			<li><a data-ng-click="add()">Yes</a></li>
+			<li><a>More Info</a></li>
+			<li class="cancel"><a data-ng-click="modalSubmenu()">Cancel</a></li>
+		</ul>
+	</div><!-- end Modal Submenu -->
+
+
+</div>
